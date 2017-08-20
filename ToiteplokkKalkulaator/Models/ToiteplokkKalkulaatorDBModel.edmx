@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ToiteplokkKalkulaatorDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AMD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPU" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AMD_GPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GPU" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Intel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPU" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NVIDIA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GPU" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Optical">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OpticalDrive" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Memory" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StorageDrive" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Power" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ToiteplokkPower">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Toiteplokk" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aadress" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Hash" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Salt" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ToiteplokkKalkulaatorDBModelStoreContainer">
+          <EntitySet Name="AMD" EntityType="Self.AMD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AMD_GPU" EntityType="Self.AMD_GPU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Intel" EntityType="Self.Intel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NVIDIA" EntityType="Self.NVIDIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Optical" EntityType="Self.Optical" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ToiteplokkPower" EntityType="Self.ToiteplokkPower" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ToiteplokkKalkulaatorDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AMD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPU" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AMD_GPU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GPU" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Intel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPU" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NVIDIA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GPU" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Optical">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OpticalDrive" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Memory" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StorageDrive" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Power" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ToiteplokkPower">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Toiteplokk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Aadress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ToiteplokkKalkulaatorDBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AMD" EntityType="Self.AMD" />
+          <EntitySet Name="AMD_GPU" EntityType="Self.AMD_GPU" />
+          <EntitySet Name="Intel" EntityType="Self.Intel" />
+          <EntitySet Name="NVIDIA" EntityType="Self.NVIDIA" />
+          <EntitySet Name="Optical" EntityType="Self.Optical" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" />
+          <EntitySet Name="Storage" EntityType="Self.Storage" />
+          <EntitySet Name="ToiteplokkPower" EntityType="Self.ToiteplokkPower" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ToiteplokkKalkulaatorDBModelStoreContainer" CdmEntityContainer="ToiteplokkKalkulaatorDBContext">
+          <EntitySetMapping Name="AMD">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.AMD">
+              <MappingFragment StoreEntitySet="AMD">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AMD_GPU">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.AMD_GPU">
+              <MappingFragment StoreEntitySet="AMD_GPU">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GPU" ColumnName="GPU" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Intel">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.Intel">
+              <MappingFragment StoreEntitySet="Intel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NVIDIA">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.NVIDIA">
+              <MappingFragment StoreEntitySet="NVIDIA">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GPU" ColumnName="GPU" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Optical">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.Optical">
+              <MappingFragment StoreEntitySet="Optical">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OpticalDrive" ColumnName="OpticalDrive" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAM">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.RAM">
+              <MappingFragment StoreEntitySet="RAM">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Memory" ColumnName="Memory" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Storage">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.Storage">
+              <MappingFragment StoreEntitySet="Storage">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StorageDrive" ColumnName="StorageDrive" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ToiteplokkPower">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.ToiteplokkPower">
+              <MappingFragment StoreEntitySet="ToiteplokkPower">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Toiteplokk" ColumnName="Toiteplokk" />
+                <ScalarProperty Name="Aadress" ColumnName="Aadress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ToiteplokkKalkulaatorDBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Hash" ColumnName="Hash" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
